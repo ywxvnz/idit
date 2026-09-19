@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import logo from '../assets/images/IDit.png';
@@ -8,6 +8,12 @@ function Home({ onCreate }) {
     window.location.hash === '#how-it-works' ? 'how-it-works' : null,
   );
 
+  useEffect(() => {
+    if (window.location.hash === '#how-it-works') {
+      document.getElementById('how-it-works')?.scrollIntoView();
+    }
+  }, []);
+
   return (
     <main className="home-page">
       <Navbar activeLink={activeNavLink} setActiveLink={setActiveNavLink} currentPage="home" isHome />
@@ -15,13 +21,13 @@ function Home({ onCreate }) {
       <section className="home-hero" aria-labelledby="hero-title">
         <div className="home-hero-copy">
           <p className="eyebrow">ID + edit</p>
-          <h1 id="hero-title">IDit your way.</h1>
+          <h1 id="hero-title">IDit your photo, your way.</h1>
           <p className="hero-description">Crop, resize, add a nametag, and choose a template for your ID photos for printing, all in one place.</p>
           <button className="primary-button" type="button" onClick={onCreate}>Create your ID photo <span aria-hidden="true">↗</span></button>
         </div>
         <div className="hero-logo-lockup" aria-label="IDit your way">
           <img src={logo} alt="IDit" />
-          <span>your photo, your way</span>
+          <span>ID + edit</span>
         </div>
       </section>
 
@@ -57,7 +63,7 @@ function Home({ onCreate }) {
 
       <section className="home-cta" aria-labelledby="cta-title">
         <p className="eyebrow">ID + edit</p>
-        <h2 id="cta-title">Get your ID photo ready,<br /><em>your way.</em></h2>
+        <h2 id="cta-title">IDit your photo,<br /><em>your way.</em></h2>
         <p>Prepare. Customize. Print.</p>
         <button className="primary-button light-button" type="button" onClick={onCreate}>Create your ID photo <span aria-hidden="true">↗</span></button>
       </section>
