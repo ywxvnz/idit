@@ -8,13 +8,20 @@ function Navbar({ activeLink, setActiveLink, currentPage }) {
 			</a>
 
 			<nav className="site-nav" aria-label="Main navigation">
-				<a
-					className={`site-nav-link ${activeLink === 'how-it-works' ? 'active' : ''}`}
-					href="#how-it-works"
-					onClick={() => setActiveLink('how-it-works')}
-				>
-					How it works
+				<a className={`site-nav-link ${currentPage === 'editor' ? 'active' : ''}`} href="#editor">
+					Edit
 				</a>
+				{currentPage === 'home' ? (
+					<a
+						className={`site-nav-link ${activeLink === 'how-it-works' ? 'active' : ''}`}
+						href="#how-it-works"
+						onClick={() => setActiveLink('how-it-works')}
+					>
+						How it works
+					</a>
+				) : (
+					<a className="site-nav-link" href="#home">Home</a>
+				)}
 				<a
 					className={`site-nav-link ${currentPage === 'about' || activeLink === 'about' ? 'active' : ''}`}
 					href="#about"

@@ -4,10 +4,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 
 function App() {
-  const [currentView, setCurrentView] = useState(window.location.hash);
+  const [currentView, setCurrentView] = useState(window.location.hash || '#editor');
 
   useEffect(() => {
-    const updateView = () => setCurrentView(window.location.hash);
+    const updateView = () => setCurrentView(window.location.hash || '#editor');
     window.addEventListener('popstate', updateView);
     window.addEventListener('hashchange', updateView);
     return () => {

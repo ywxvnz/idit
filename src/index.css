@@ -20,7 +20,11 @@ button {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   width: 100%;
+  background: white;
   min-height: 52px;
   padding: 10px 21px;
   display: flex;
@@ -96,7 +100,7 @@ button {
   --home-line: #d9d6dd;
   --home-cream: #f8f7f5;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
   color: var(--home-ink);
   background: #fff;
 }

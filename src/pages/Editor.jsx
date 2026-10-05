@@ -266,6 +266,7 @@ function Editor() {
       <Navbar
         activeLink={activeNavLink}
         setActiveLink={setActiveNavLink}
+        currentPage="editor"
       />
 
       <div className="editor-container">

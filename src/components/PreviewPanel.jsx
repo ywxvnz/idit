@@ -458,7 +458,7 @@ function PreviewPanel({
       />
 
       {!hasTemplate && (
-        <p className="upload-prompt">Choose a template to upload a photo/s.</p>
+        <p className="upload-prompt">Choose a template to upload a photo.</p>
       )}
 
       {hasTemplate && (
