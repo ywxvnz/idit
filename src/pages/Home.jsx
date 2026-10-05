@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import logo from '../assets/images/IDit.png';
 
 function Home({ onCreate }) {
-  const [activeNavLink, setActiveNavLink] = useState(
-    window.location.hash === '#how-it-works' ? 'how-it-works' : null,
-  );
-
   useEffect(() => {
     if (window.location.hash === '#how-it-works') {
       document.getElementById('how-it-works')?.scrollIntoView();
@@ -15,8 +11,8 @@ function Home({ onCreate }) {
   }, []);
 
   return (
-    <main className="home-page">
-      <Navbar activeLink={activeNavLink} setActiveLink={setActiveNavLink} currentPage="home" isHome />
+    <main className="home-page" id="home">
+      <Navbar currentPage="home" />
 
       <section className="home-hero" aria-labelledby="hero-title">
         <div className="home-hero-copy">

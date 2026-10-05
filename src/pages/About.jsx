@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 function About() {
   return (
     <main className="about-page">
-      <Navbar activeLink="about" setActiveLink={() => {}} currentPage="about" isHome={false} />
+      <Navbar currentPage="about" />
       <section className="about-content" aria-labelledby="about-title">
         <p className="eyebrow">About IDit</p>
         <h1 id="about-title">ID photos,<br /><em>made simple.</em></h1>

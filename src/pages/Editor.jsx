@@ -10,7 +10,6 @@ import heic2any from 'heic2any';
 
 function Editor() {
   const [activeTab, setActiveTab] = useState('photo');
-  const [activeNavLink, setActiveNavLink] = useState(null);
   const [selectedTemplateId, setSelectedTemplateId] = useState(null);
   const [uploads, setUploads] = useState([]);
   const [printUploadError, setPrintUploadError] = useState('');
@@ -263,18 +262,13 @@ function Editor() {
 
   return (
     <main className="editor-page">
-      <Navbar
-        activeLink={activeNavLink}
-        setActiveLink={setActiveNavLink}
-        currentPage="editor"
-      />
+      <Navbar currentPage="editor" />
 
       <div className="editor-container">
 
         <EditorTabs
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          onEditorTabSelected={() => setActiveNavLink(null)}
         />
 
         <div className="editor-workspace">

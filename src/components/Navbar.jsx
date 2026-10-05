@@ -1,32 +1,20 @@
 import logo from '../assets/images/IDit.png';
 
-function Navbar({ activeLink, setActiveLink, currentPage }) {
+function Navbar({ currentPage }) {
 	return (
 		<header className="site-header">
-			<a className={`site-logo ${currentPage === 'editor' ? 'active' : ''}`} href="#editor" aria-label="Open IDit editor">
+			<a className="site-logo" href="#editor" aria-label="Open IDit editor">
 				<img src={logo} alt="IDit" />
 			</a>
 
 			<nav className="site-nav" aria-label="Main navigation">
+				<a className={`site-nav-link ${currentPage === 'home' ? 'active' : ''}`} href="#home">
+					Home
+				</a>
 				<a className={`site-nav-link ${currentPage === 'editor' ? 'active' : ''}`} href="#editor">
 					Edit
 				</a>
-				{currentPage === 'home' ? (
-					<a
-						className={`site-nav-link ${activeLink === 'how-it-works' ? 'active' : ''}`}
-						href="#how-it-works"
-						onClick={() => setActiveLink('how-it-works')}
-					>
-						How it works
-					</a>
-				) : (
-					<a className="site-nav-link" href="#home">Home</a>
-				)}
-				<a
-					className={`site-nav-link ${currentPage === 'about' || activeLink === 'about' ? 'active' : ''}`}
-					href="#about"
-					onClick={() => setActiveLink('about')}
-				>
+				<a className={`site-nav-link ${currentPage === 'about' ? 'active' : ''}`} href="#about">
 					About
 				</a>
 			</nav>
